@@ -4069,3 +4069,10 @@ input, select, textarea {
 		.imagesmall {
 			padding: 5em
 		}
+
+		.LeadButton {
+			color: black !important;
+		}
+
+		.LeadMenuButtons {
+		}

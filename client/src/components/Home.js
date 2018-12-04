@@ -134,7 +134,7 @@ class Home extends Component {
               <li>(801) 995-9047</li>
             </ul>
             <ul className="links">
-              <li><Link to='login'>Manage</Link></li>
+              <li><Link to='/leads'>Manage</Link></li>
             </ul>
             <p className="copyright">&copy; Diversified Financial Services, Inc. © 2018 All Rights Reserved</p>
           </div>

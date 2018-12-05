@@ -4064,7 +4064,8 @@ input, select, textarea {
 
 		.formbuttons {
 			color: white !important;
-		}
+			padding: .5em !important;
+			height: 3em;		}
 
 		.imagesmall {
 			padding: 5em
@@ -4072,7 +4073,15 @@ input, select, textarea {
 
 		.LeadButton {
 			color: black !important;
+			padding: .4em !important;
+			margin: .1em !important;
 		}
 
 		.LeadMenuButtons {
+		}
+
+		.editformbuttons {
+			color: white !important;
+			padding: .5em !important;
+			height: 3em;
 		}

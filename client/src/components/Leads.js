@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import { Header, Button, Segment, Table, Icon, Confirm } from 'semantic-ui-react';
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import {getForms, deleteForm} from '../actions/form'
+import EditForm from './EditForm'
 import '../assets/css/main.css'
 
 const status = ['New', 'Follow-Up', 'Closed', ]
@@ -30,9 +31,11 @@ class Leads extends Component {
           <Table.Cell>{l.cellphone}</Table.Cell>
           <Table.Cell>{l.note}</Table.Cell>
           <Table.Cell>
-            <Button className='LeadButton' icon='address book' color='blue' size='mini'></Button>
-            <Button className='LeadButton' icon='edit' color='green' size='mini'></Button>
-            <Button className='LeadButton' icon='trash' color='red' size='mini' onClick={() => this.deleteLead(l.id)}></Button>
+            <Button.Group>
+              <Button className='LeadButton' icon='address book' color='blue' size='mini'></Button>
+              <EditForm lead={l} />
+              <Button className='LeadButton' icon='trash' color='red' size='mini' onClick={() => this.deleteLead(l.id)}></Button>
+            </Button.Group>
           </Table.Cell>
         </Table.Row>
       )
@@ -49,9 +52,11 @@ class Leads extends Component {
           <Table.Cell>{l.cellphone}</Table.Cell>
           <Table.Cell>{l.note}</Table.Cell>
           <Table.Cell>
-            <Button className='LeadButton' icon='address book' color='blue' size='mini'></Button>
-            <Button className='LeadButton' icon='edit' color='green' size='mini'></Button>
-            <Button className='LeadButton' icon='trash' color='red' size='mini' onClick={() => this.deleteLead(l.id)}></Button>
+            <Button.Group>
+              <Button className='LeadButton' icon='address book' color='blue' size='mini'></Button>
+              <EditForm lead={l} />
+              <Button className='LeadButton' icon='trash' color='red' size='mini' onClick={() => this.deleteLead(l.id)}></Button>
+            </Button.Group>
           </Table.Cell>
         </Table.Row>
       )
@@ -68,9 +73,11 @@ class Leads extends Component {
           <Table.Cell>{l.cellphone}</Table.Cell>
           <Table.Cell>{l.note}</Table.Cell>
           <Table.Cell>
-            <Button className='LeadButton' icon='address book' color='blue' size='mini'></Button>
-            <Button className='LeadButton' icon='edit' color='green' size='mini'></Button>
-            <Button className='LeadButton' icon='trash' color='red' size='mini' onClick={() => this.deleteLead(l.id)}></Button>
+            <Button.Group>
+              <Button className='LeadButton' icon='address book' color='blue' size='mini'></Button>
+              <EditForm lead={l} />
+              <Button className='LeadButton' icon='trash' color='red' size='mini' onClick={() => this.deleteLead(l.id)}></Button>
+            </Button.Group>
           </Table.Cell>
         </Table.Row>
       )
@@ -81,6 +88,7 @@ class Leads extends Component {
     return (
       <div>
         <Segment className='LeadMenuButtons' basic>
+          <Link to='/'><a className='button'>Home</a></Link>
           {status.map(s => (
             <a key={s} href={`#${s}`} className='button'>{s}</a>
           ))}
@@ -145,4 +153,4 @@ const mapStateToProps = (state) => {
   return { leads: state.form }
 }
 
-export default connect(mapStateToProps)(Leads);
+export default withRouter(connect(mapStateToProps)(Leads));

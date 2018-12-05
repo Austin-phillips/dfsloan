@@ -37,6 +37,6 @@ class Api::FormsController < ApplicationController
   end 
 
   def form_params
-    params.require(:form).permit( :first, :last, :middle, :email, :cellphone, :workphone, :maritalstatus, :dob, :addressone, :addresstwo, :city, :state, :zipcode, :yaa, :roo, :bfirst, :blast, :bmiddle, :bdob )
+    params.require(:form).permit( :first, :last, :middle, :email, :cellphone, :workphone, :maritalstatus, :dob, :addressone, :addresstwo, :city, :state, :zipcode, :yaa, :roo, :bfirst, :blast, :bmiddle, :bdob, :status, :note, :exnote )
   end 
 end

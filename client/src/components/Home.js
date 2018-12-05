@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link, withRouter } from 'react-router-dom';
-import { Button, Icon, Segment } from 'semantic-ui-react';
+import { Button, Icon, Segment, Embed } from 'semantic-ui-react';
 import '../assets/css/main.css'
 import ApplicationForm from './ApplicationForm';
 import pic01 from '../assets/css/images/pic01.jpg'

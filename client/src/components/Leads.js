@@ -4,6 +4,7 @@ import { Link, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import {getForms, deleteForm} from '../actions/form'
 import EditForm from './EditForm'
+import ViewLead from './ViewLead'
 import '../assets/css/main.css'
 
 const status = ['New', 'Follow-Up', 'Closed', ]
@@ -27,12 +28,12 @@ class Leads extends Component {
       return(
         <Table.Row key={l.id}>
           <Table.Cell>{l.first} {l.last}</Table.Cell>
-          <Table.Cell>{l.email}</Table.Cell>
+          <Table.Cell><a href={"mailto:" + `${l.email}`}>{l.email}</a></Table.Cell>
           <Table.Cell>{l.cellphone}</Table.Cell>
           <Table.Cell>{l.note}</Table.Cell>
           <Table.Cell>
             <Button.Group>
-              <Button className='LeadButton' icon='address book' color='blue' size='mini'></Button>
+              <ViewLead lead={l} />
               <EditForm lead={l} />
               <Button className='LeadButton' icon='trash' color='red' size='mini' onClick={() => this.deleteLead(l.id)}></Button>
             </Button.Group>
@@ -48,12 +49,12 @@ class Leads extends Component {
       return(
         <Table.Row key={l.id}>
           <Table.Cell>{l.first} {l.last}</Table.Cell>
-          <Table.Cell>{l.email}</Table.Cell>
+          <Table.Cell><a href={"mailto:" + `${l.email}`}>{l.email}</a></Table.Cell>
           <Table.Cell>{l.cellphone}</Table.Cell>
           <Table.Cell>{l.note}</Table.Cell>
           <Table.Cell>
             <Button.Group>
-              <Button className='LeadButton' icon='address book' color='blue' size='mini'></Button>
+              <ViewLead lead={l} />          
               <EditForm lead={l} />
               <Button className='LeadButton' icon='trash' color='red' size='mini' onClick={() => this.deleteLead(l.id)}></Button>
             </Button.Group>
@@ -69,12 +70,12 @@ class Leads extends Component {
       return(
         <Table.Row key={l.id}>
           <Table.Cell>{l.first} {l.last}</Table.Cell>
-          <Table.Cell>{l.email}</Table.Cell>
+          <Table.Cell><a href={"mailto:" + `${l.email}`}>{l.email}</a></Table.Cell>
           <Table.Cell>{l.cellphone}</Table.Cell>
           <Table.Cell>{l.note}</Table.Cell>
           <Table.Cell>
             <Button.Group>
-              <Button className='LeadButton' icon='address book' color='blue' size='mini'></Button>
+              <ViewLead lead={l} />
               <EditForm lead={l} />
               <Button className='LeadButton' icon='trash' color='red' size='mini' onClick={() => this.deleteLead(l.id)}></Button>
             </Button.Group>
@@ -83,14 +84,15 @@ class Leads extends Component {
       )
     })
   }
+  // className = 'button LeadMenuButtons'
 
   render() {
     return (
       <div>
-        <Segment className='LeadMenuButtons' basic>
-          <Link to='/'><a className='button'>Home</a></Link>
+        <Segment basic>
+          <Link to='/'><Button icon='home' size='small' className='button LeadMenuButtons'></Button></Link>
           {status.map(s => (
-            <a key={s} href={`#${s}`} className='button'>{s}</a>
+            <a key={s} href={`#${s}`} className='button LeadMenuButtons'>{s}</a>
           ))}
         </Segment>
         <Segment basic id='New'>

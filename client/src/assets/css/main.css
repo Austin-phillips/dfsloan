@@ -4078,10 +4078,21 @@ input, select, textarea {
 		}
 
 		.LeadMenuButtons {
+			background-color: rgb(115, 194, 251) !important;
+			color: black !important;
+			margin: .5em;
 		}
 
 		.editformbuttons {
 			color: white !important;
 			padding: .5em !important;
 			height: 3em;
+		}
+
+		.printDoc {
+			margin: 5em;
+		}
+
+		.applicationForm {
+			margin: 2.5em;
 		}

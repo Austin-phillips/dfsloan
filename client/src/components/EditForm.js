@@ -176,8 +176,6 @@ class EditForm extends Component {
                   label='Years at address'
                   name='yaa'
                   defaultValue={yaa}
-                  type='number'
-                  pattern="\d*"
                   required
                   onChange={this.handleChange}
                 />

@@ -116,9 +116,11 @@ class Home extends Component {
               <h2>Fill Out An Application Today</h2>
               {/* <p>Scott will contact you after reviewing your information.</p> */}
             </header>
+            <Segment basic>
             <ul className="actions special">
               <li><ApplicationForm /></li>
             </ul>
+            </Segment>
           </div>
         </section>
 

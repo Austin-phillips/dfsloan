@@ -52,6 +52,7 @@ class ApplicationForm extends Component {
           open={this.state.modalOpen}
           onClose={this.handleClose}
         >
+        <div className='applicationForm'>
           <Header textAlign='center'>Borrowers' Information</Header>
           <Segment basic>
             <Form onSubmit={this.handleSubmit}>
@@ -206,6 +207,7 @@ class ApplicationForm extends Component {
               </Button.Group>
             </Form>
           </Segment>
+          </div>
         </Modal>
       </div>
     );
